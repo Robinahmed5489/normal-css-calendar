@@ -40,3 +40,182 @@ body{
     background-color: brown;
     color: white;
 }
+
+.grid-design{
+    margin-top: 20px;
+    display: grid;
+    max-width: 700px;
+    margin:auto;
+    margin-top: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.3fr 2fr 1.5fr 1.2fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content-1 content-2 content-3"
+    "sidebar footer footer footer"
+    ;
+    gap: 20px;
+    border-radius: 5px;
+}
+.grid-design nav, .grid-design div{
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    grid-area: nav;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.main{
+    grid-area: main;
+}
+.content-1{
+    grid-area: content-1;
+}
+.content-2{
+    grid-area: content-2;
+}
+.content-3{
+    grid-area: content-3;
+}
+.footer{
+    grid-area: footer;
+}
+.response-grid{
+    max-width: 900px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1.5fr;
+    grid-template-rows: repeat(2, 1.5fr);
+    grid-template-areas: 
+    "grid-1 grid-2 grid-2"
+    "grid-1 grid-3 grid-4"
+    ;
+    gap: 0.5em;
+}
+.response-grid div{
+    padding: 20px;
+}
+.grid-1{
+    background-color: pink;
+    grid-area: grid-1;
+}
+.grid-2{
+    background-color: orange;
+    grid-area: grid-2;
+}
+.grid-3{
+    background-color: purple;
+    grid-area: grid-3;
+}
+.grid-4{
+    background-color: grey;
+    grid-area: grid-4;
+}
+.task1{
+    width:70%;
+    margin: 20px auto;
+    border: 1px solid black;
+}
+.task1 .main-box{
+    display: flex;
+    
+}
+.task1 .main-box .box:nth-child(1){
+    width:30%;
+    margin:0px 1%;
+    border: 1px solid red;
+    height:200px;
+}
+.task1 .main-box .box:nth-child(2){
+    width:65%;
+    margin:0px 1%;
+    border: 1px solid red;
+    height:200px;
+}
+.restaurant{
+    width: 80%;
+    margin: 0 auto;
+}
+.restaurant button{
+    background-color: blue;
+    padding: 10px 20px;
+    color: white;
+}
+.restaurant .res-container{
+    display: flex;
+    border: 0.5px solid grey;
+    margin-top:10px;
+}
+.restaurant .res-container .image{
+    width: 30%;
+}
+.restaurant .res-container .image img{
+    width: 100%;
+    height: 100%;
+}
+.restaurant .res-container .info{
+    width: 70%;
+    padding: 20px;
+}
+
+
+
+
+
+@media screen and (max-width:576px) {
+   
+    .grid-design{
+        
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 0.5fr 2fr 1.5fr 1.5fr 1.5fr 1fr;
+    grid-template-areas: 
+    "nav"
+    "sidebar"
+    "main"
+    "content-1"
+    "content-2" 
+    "content-3"
+    "footer"
+    ;
+}
+.response-grid{
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "grid-1"
+    "grid-2"
+    "grid-3" 
+    "grid-4"
+    ;
+}
+.task1 .main-box{
+    flex-direction: column;
+    
+}
+.task1 .main-box .box:nth-child(1), .task1 .main-box .box:nth-child(2){
+    width: 100%;
+    text-align: center;
+}
+.restaurant .res-container{
+    flex-direction: column;
+}
+.restaurant .res-container .image, .restaurant .res-container .info{
+    width: 100%;
+}
+.restaurant .res-container .image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.restaurant .res-container .image img{
+    width:60%;
+    height:100%;
+}
+
+
+}
